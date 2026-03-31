@@ -5,23 +5,37 @@ import math
 # ==============================================================================
 # WEB PAGE CONFIGURATION & HEADER
 # ==============================================================================
-st.set_page_config(page_title="Air-Stripping by Osama Nimri", layout="wide")
+# Added a water droplet icon to the browser tab
+st.set_page_config(page_title="Air-Stripping | Osama Nimri", layout="wide", page_icon="💧")
 
 # Create two columns: a wide one for the text (size 4), a narrow one for the logo (size 1)
 col_text, col_logo = st.columns([4, 1])
 
 with col_text:
-    st.title("Air-Stripping by Osama Nimri")
-    st.markdown("### Multicomponent Packed Tower Aeration Design Calculator")
+    # 1. Professional Custom Header using HTML/CSS
     st.markdown("""
-    This reactive application computes strict hydrodynamic sizing, phase equilibria, and 
-    mass transfer kinetics using the Eckert Generalized Pressure Drop Correlation and the 
-    Onda Mass Transfer Model. It implements the multicomponent Z_max bounding logic.
-    """)
+    <div style="padding-bottom: 10px;">
+        <h1 style="font-size: 3.2rem; margin-bottom: 0px; padding-bottom: 0px;">Air-Stripping Calculator</h1>
+        <h3 style="font-size: 1.4rem; margin-top: 0px; color: #666666; font-weight: 400;">
+            Developed by <b>Osama Nimri</b>
+        </h3>
+        <hr style="border: none; height: 3px; background-color: #005eb8; width: 120px; margin-left: 0; margin-top: 15px;">
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("#### Multicomponent Packed Tower Aeration Design")
+    
+    # 2. Clean UI: Hiding the technical explanation inside a dropdown menu
+    with st.expander("📖 Read Technical Methodology", expanded=False):
+        st.markdown("""
+        This reactive application computes strict hydrodynamic sizing, phase equilibria, and 
+        mass transfer kinetics using the **Eckert Generalized Pressure Drop Correlation** and the 
+        **Onda Mass Transfer Model**. It implements the multicomponent $Z_{max}$ bounding logic 
+        to ensure regulatory compliance across all target profiles.
+        """)
 
 with col_logo:
-    # This places your logo neatly in the top right corner!
-    # You can change the width number to make it bigger or smaller
+    # Keeps your university logo in the top right
     st.image("R.png", width=150)
 
 # ==============================================================================
@@ -29,8 +43,7 @@ with col_logo:
 # ==============================================================================
 st.sidebar.header("System Operational Parameters")
 
-# Add the logo to the sidebar (adjust the width as needed)
-st.sidebar.image("R.png", use_column_width=True)
+
 
 # Operating Conditions
 T_C = st.sidebar.slider("Design Groundwater Temp (°C)", 
