@@ -6,13 +6,23 @@ import math
 # WEB PAGE CONFIGURATION & HEADER
 # ==============================================================================
 st.set_page_config(page_title="Air-Stripping by Osama Nimri", layout="wide")
-st.title("Air-Stripping by Osama Nimri")
-st.markdown("### Multicomponent Packed Tower Aeration Design Calculator")
-st.markdown("""
-This reactive application computes strict hydrodynamic sizing, phase equilibria, and 
-mass transfer kinetics using the Eckert Generalized Pressure Drop Correlation and the 
-Onda Mass Transfer Model. It implements the multicomponent Z_max bounding logic.
-""")
+
+# Create two columns: a wide one for the text (size 4), a narrow one for the logo (size 1)
+col_text, col_logo = st.columns([4, 1])
+
+with col_text:
+    st.title("Air-Stripping by Osama Nimri")
+    st.markdown("### Multicomponent Packed Tower Aeration Design Calculator")
+    st.markdown("""
+    This reactive application computes strict hydrodynamic sizing, phase equilibria, and 
+    mass transfer kinetics using the Eckert Generalized Pressure Drop Correlation and the 
+    Onda Mass Transfer Model. It implements the multicomponent Z_max bounding logic.
+    """)
+
+with col_logo:
+    # This places your logo neatly in the top right corner!
+    # You can change the width number to make it bigger or smaller
+    st.image("R.png", width=150)
 
 # ==============================================================================
 # SIDEBAR: SYSTEM INPUT PARAMETERS
@@ -214,18 +224,3 @@ table_md = f"""
 | **Required Depth (Z_i)** | **{res_TCE['Z']:.2f} m** | **{res_PCE['Z']:.2f} m** |
 """
 st.markdown(table_md)
-[theme]
-# The main primary color (used for sliders, buttons, etc.)
-primaryColor="#005eb8"
-
-# The background color of the main body
-backgroundColor="#ffffff"
-
-# The background color for the sidebar
-secondaryBackgroundColor="#f0f2f6"
-
-# The color of the text
-textColor="#262730"
-
-# The font family (options: "sans serif", "serif", "monospace")
-font="sans serif"
