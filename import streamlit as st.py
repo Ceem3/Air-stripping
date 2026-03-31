@@ -46,7 +46,7 @@ st.sidebar.header("System Operational Parameters")
 
 
 # Operating Conditions
-T_C = st.sidebar.slider("Design Groundwater Temp (°C)", 
+T_C = st.sidebar.slider("Design Temp (°C)", 
                         min_value=5.0, max_value=30.0, value=15.0, step=0.5)
 Q_water_m3day = st.sidebar.number_input("Well Yield Flow Rate (m³/day)", value=1000.0)
 R_s = st.sidebar.number_input("Design Stripping Factor (Rs)", 
