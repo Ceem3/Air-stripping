@@ -20,7 +20,7 @@ Onda Mass Transfer Model. It implements the multicomponent Z_max bounding logic.
 st.sidebar.header("System Operational Parameters")
 
 # Add the logo to the sidebar (adjust the width as needed)
-st.sidebar.image("R.jpg", use_column_width=True)
+st.sidebar.image("R.png", use_column_width=True)
 
 # Operating Conditions
 T_C = st.sidebar.slider("Design Groundwater Temp (°C)", 
